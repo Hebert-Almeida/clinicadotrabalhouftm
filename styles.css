@@ -1,0 +1,326 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;800;900&display=swap);
+
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 10rem;
+    position: fixed;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+    padding: 0 2rem;
+}
+
+header>.logo--box {
+    height: 100%;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+}
+
+header>.logo--box>img {
+    max-width: 120px;
+    height: auto;
+    transition: 0.8s all;
+}
+
+header>.logo--box>p {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+header>.logo--box>img:hover {
+    transform: rotate(360deg);
+    cursor: pointer;
+}
+
+header>.header--items {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+header>.header--items>ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+
+header>.header--items>ul>li {
+    margin: 0rem 2rem;
+}
+
+header>.header--items>ul>li>a {
+    text-decoration: none;
+    color: #333;
+    transition: 0.2s all;
+    font-weight: 500;
+}
+
+header>.header--items>ul>li>a:hover {
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Menu Hambúrguer - escondido por padrão */
+.hamburger {
+    display: none;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
+/* Container std */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    flex-direction: column;
+}
+
+.section--title {
+    font-weight: 800;
+    font-size: 2rem;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.content {
+    max-width: 70vw;
+}
+
+.map {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.instagram {
+    flex: 1;
+}
+
+/* Intro */
+.intro.container {
+    text-align: center;
+    width: 100%;
+    background-image: url('https://www.gov.br/arquivonacional/pt-br/centrais-de-conteudo-old/nise-da-silveira-jpg/@@images/image');
+    background-position: center;
+    background-size: cover;
+}
+
+.intro--text {
+    width: 70%;
+    padding: 10vh;
+    background-color: #ffffffda;
+}
+
+.intro--text>h1 {
+    margin-bottom: 16px;
+    font-size: 2.5rem;
+}
+
+span.uftm>a {
+    text-decoration: none;
+    color: #15842a;
+    transition: 0.2s all;
+}
+
+span.uftm>a:hover {
+    color: #23cc42;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 5rem;
+}
+
+footer>.footer--icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding-top: 5px;
+}
+
+footer>.footer--icons>a {
+    color: #333;
+    font-size: 24px;
+    margin-left: 20px;
+}
+
+footer>.footer--icons>a :hover {
+    color: purple;
+}
+
+/* Botoes */
+button {
+    height: 50px;
+    width: 200px;
+    margin-top: 10px;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: transparent;
+    border: 1px solid black;
+    box-shadow: 1px 1px 1px black;
+    transition: 0.4s all ease;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    color: #fff;
+    background-color: #222;
+    border: #333;
+}
+
+button:active {
+    transform: translateY(4px);
+    color: #fff;
+    background-color: #222;
+    border: #333;
+}
+
+/* Conditions */
+.sticky {
+    background-color: #111 !important;
+}
+
+.sticky .header--items ul li a {
+    color: azure !important;
+}
+
+.sticky .logo--box p {
+    color: azure;
+}
+
+.sticky .hamburger span {
+    background-color: azure;
+}
+
+.negative {
+    background-color: #111;
+    color: azure;
+}
+
+/* Mobile */
+@media (max-width: 1200px) {
+    .intro--text {
+        width: 90%;
+        margin-top: 100px;
+        padding: 1rem;
+    }
+
+    .map {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 0 1rem;
+    }
+
+    .logo--box > p {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+        z-index: 1001;
+    }
+
+    header>.header--items>ul {
+        position: fixed;
+        left: -100%;
+        top: 10rem;
+        flex-direction: column;
+        background-color: #111;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.3);
+        padding: 2rem 0;
+    }
+
+    header>.header--items>ul.active {
+        left: 0;
+    }
+
+    header>.header--items>ul>li {
+        margin: 1.5rem 0;
+    }
+
+    header>.header--items>ul>li>a {
+        color: azure;
+        font-size: 1.2rem;
+    }
+
+    header>.header--items>ul>li>a:hover {
+        font-size: 1.3rem;
+    }
+
+    .intro--text>h1 {
+        font-size: 1.8rem;
+    }
+
+    .section--title {
+        font-size: 1.5rem;
+    }
+
+    .content {
+        max-width: 90vw;
+    }
+}
