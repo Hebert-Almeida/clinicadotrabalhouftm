@@ -243,6 +243,10 @@ button:active {
     color: azure;
 }
 
+header.black>nav>.hamburger span {
+    background-color: azure;
+}
+
 .sticky .hamburger span {
     background-color: azure;
 }
