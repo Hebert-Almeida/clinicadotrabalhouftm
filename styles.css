@@ -243,6 +243,10 @@ button:active {
     color: azure;
 }
 
+.sticky .hamburger span {
+    background-color: azure;
+}
+
 .negative {
     background-color: #111;
     color: azure;
@@ -264,7 +268,14 @@ button:active {
 @media (max-width: 768px) {
     header {
         padding: 0 1rem;
+    }
+
+    header.black {
         background-color: #111;
+    }
+
+    header.black>nav>.hamburger span {
+        background-color: azure;
     }
 
     .logo--box>p {
@@ -277,10 +288,6 @@ button:active {
         cursor: pointer;
         gap: 5px;
         z-index: 1001;
-    }
-
-    .hamburger span {
-        background-color: azure;
     }
 
     header>.header--items>ul {
