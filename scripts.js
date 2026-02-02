@@ -12,6 +12,7 @@ const header = document.querySelector('header');
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
+    header.classList.toggle('black')
 });
 
 // Fechar menu ao clicar em um link
@@ -30,3 +31,24 @@ window.addEventListener('scroll', () => {
         header.classList.remove('sticky');
     }
 });
+// Animação de scroll para seções
+function handleScrollAnimation() {
+    const elements = document.querySelectorAll('.scroll-animate, .scroll-animate-left, .scroll-animate-right, .scroll-animate-scale');
+
+    elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementBottom = element.getBoundingClientRect().bottom;
+        const windowHeight = window.innerHeight;
+
+        // Elemento aparece quando está 80% visível na tela
+        if (elementTop < windowHeight * 0.8 && elementBottom > 0) {
+            element.classList.add('show');
+        }
+    });
+}
+
+// Executar ao carregar a página
+document.addEventListener('DOMContentLoaded', handleScrollAnimation);
+
+// Executar ao rolar a página
+window.addEventListener('scroll', handleScrollAnimation);
